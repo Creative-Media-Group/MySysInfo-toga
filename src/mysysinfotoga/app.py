@@ -22,8 +22,8 @@ class MySysInfotoga(toga.App):
             text=f"{tr(csv_file=file, target_key='HELLOWORLD', langcode=lang)}, {lang}"
         )
         main_box = toga.Box()
-        processor = toga.Box()
-        about = toga.Box()
+        processor = toga.Box(children=[toga.Label("Page 1")])
+        about = toga.Box(children=[toga.Label("Page 2")])
 
         container = toga.OptionContainer(
             content=[("Processor", processor), ("About", about)]
