@@ -1,2 +1,12 @@
-stringname,en_EN
-DEVICE,Device
+stringname,en_EN,de_DE
+DEVICE,Device,Gerät
+ABOUT,About,Über
+LICENSE,License,Lizenz
+PARAMETER,Parameter,Parameter
+VALUE,Value,Wert
+SYSTEM,System,System
+USERNAME,Username,Benutzername
+VERSION,Version,Version
+ARCHITECTURE,Processorarchitecture,Prozessorarchitektur
+PROCESSORTYPE,Processortype,Prozessortyp
+HOSTNAME,Hostname,Hostname
