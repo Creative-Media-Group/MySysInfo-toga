@@ -18,17 +18,14 @@ class MySysInfotoga(toga.App):
         else:
             lang = locale.getlocale()
             lang, _ = lang
-        textbox = toga.Label(
-            text=f"{tr(csv_file=file, target_key='HELLOWORLD', langcode=lang)}, {lang}"
-        )
         main_box = toga.Box()
         device = toga.Box(children=[toga.Label("Page 1")])
         about = toga.Box(children=[toga.Label("Page 2")])
 
         container = toga.OptionContainer(
             content=[
-                (tr(csv_file=file, target_key="DEVICE"), device),
-                (tr(csv_file=file, target_key="ABOUT"), about),
+                (tr(csv_file=file, target_key="DEVICE", langcode=lang), device),
+                (tr(csv_file=file, target_key="ABOUT", langcode=lang), about),
             ]
         )
         container.current_tab = 0
