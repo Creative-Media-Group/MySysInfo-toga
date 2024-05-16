@@ -22,11 +22,11 @@ class MySysInfotoga(toga.App):
             text=f"{tr(csv_file=file, target_key='HELLOWORLD', langcode=lang)}, {lang}"
         )
         main_box = toga.Box()
-        processor = toga.Box(children=[toga.Label("Page 1")])
+        device = toga.Box(children=[toga.Label("Page 1")])
         about = toga.Box(children=[toga.Label("Page 2")])
 
         container = toga.OptionContainer(
-            content=[("Processor", processor), ("About", about)]
+            content=[(tr(csv_file=file, target_key="DEVICE"), device), ("About", about)]
         )
         container.current_tab = 0
         self.main_window = toga.MainWindow(title=self.formal_name)
