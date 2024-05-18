@@ -48,6 +48,8 @@ class MySysInfotoga(toga.App):
                 (tr(csv_file=file, target_key="ABOUT", langcode=lang), about),
             ]
         )
+        device.style.direction = "column"
+        about.style.direction = "column"
         container.current_tab = 0
         self.main_window = toga.MainWindow(title=self.formal_name)
         self.main_window.content = container  # main_box
