@@ -3,8 +3,18 @@ from toga.style import Pack
 from toga.style.pack import COLUMN, ROW
 from mylocale.TR import tr
 import locale
+import platform as p
+import os
 
 platform = toga.platform.current_platform
+architecture = p.architecture()
+architecture, _ = architecture
+processor = p.processor()
+version = p.version()
+node = p.node()
+machine = p.machine()
+release = p.release()
+username = str(os.getenv("USER"))
 
 
 class MySysInfotoga(toga.App):
@@ -19,7 +29,17 @@ class MySysInfotoga(toga.App):
             lang = locale.getlocale()
             lang, _ = lang
         main_box = toga.Box()
-        device = toga.Box(children=[toga.Label("Page 1")])
+        device = toga.Box(
+            children=[
+                toga.Table(
+                    headings=[
+                        tr(csv_file=file, target_key="PARAMETER"),
+                        tr(csv_file=file, target_key="VALUE"),
+                    ],
+                    data=[(tr(csv_file=file, target_key="USERNAME"), username)],style=Pack()
+                )
+            ]
+        )
         about = toga.Box(children=[toga.Label("Page 2")])
 
         container = toga.OptionContainer(
