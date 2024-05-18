@@ -36,7 +36,7 @@ class MySysInfotoga(toga.App):
                         tr(csv_file=file, target_key="PARAMETER"),
                         tr(csv_file=file, target_key="VALUE"),
                     ],
-                    data=[(tr(csv_file=file, target_key="USERNAME"), username)],style=Pack()
+                    data=[(tr(csv_file=file, target_key="USERNAME"), username)],
                 )
             ]
         )
