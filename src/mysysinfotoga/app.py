@@ -15,6 +15,7 @@ node = p.node()
 machine = p.machine()
 release = p.release()
 username = str(os.getenv("USER"))
+print(processor)
 
 
 class MySysInfotoga(toga.App):
@@ -28,7 +29,7 @@ class MySysInfotoga(toga.App):
         else:
             lang = locale.getlocale()
             lang, _ = lang
-        main_box = toga.Box()
+        # main_box = toga.Box()
         device = toga.Box(
             children=[
                 toga.Table(
@@ -44,6 +45,16 @@ class MySysInfotoga(toga.App):
                         (
                             tr(csv_file=file, target_key="SYSTEM", langcode=lang),
                             platform,
+                        ),
+                        (
+                            tr(
+                                csv_file=file, target_key="PROCESSORTYPE", langcode=lang
+                            ),
+                            processor,
+                        ),
+                        (
+                            tr(csv_file=file, target_key="ARCHITECTURE", langcode=lang),
+                            architecture,
                         ),
                     ],
                 )
