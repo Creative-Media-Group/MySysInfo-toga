@@ -56,6 +56,10 @@ class MySysInfotoga(toga.App):
                             tr(csv_file=file, target_key="ARCHITECTURE", langcode=lang),
                             architecture,
                         ),
+                        (
+                            tr(csv_file=file, target_key="VERSION", langcode=lang),
+                            version,
+                        ),
                     ],
                 )
             ]
