@@ -33,8 +33,8 @@ class MySysInfotoga(toga.App):
             children=[
                 toga.Table(
                     headings=[
-                        tr(csv_file=file, target_key="PARAMETER"),
-                        tr(csv_file=file, target_key="VALUE"),
+                        tr(csv_file=file, target_key="PARAMETER", langcode=lang),
+                        tr(csv_file=file, target_key="VALUE", langcode=lang),
                     ],
                     data=[(tr(csv_file=file, target_key="USERNAME"), username)],
                 )
