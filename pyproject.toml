@@ -4,7 +4,7 @@ project_name = "MySysInfo-toga"
 bundle = "de.cmg"
 version = "0.0.1"
 url = "https://github.com/Creative-Media-Group/mysysinfotoga"
-license = "Other"
+license.file = "LICENSE"
 author = "tct123"
 author_email = "tct1234@protonmail.com"
 
