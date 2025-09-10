@@ -35,16 +35,22 @@ class MySysInfotoga(toga.App):
             children=[
                 toga.Table(
                     headings=[
-                        "PARAMETER",  # tr.tr(target_key="PARAMETER", langcode=lang),
-                        "VALUE",
+                        translate(
+                            folder=file, key="PARAMETER", lang=lang
+                        ),  # tr.tr(target_key="PARAMETER", langcode=lang),
+                        translate(folder=file, key="VALUE", lang=lang),
                     ],
                     data=[
                         (
-                            "USERNAME",  # tr.tr(target_key="USERNAME", langcode=lang),
+                            translate(
+                                folder=file, key="USERNAME", lang=lang
+                            ),  # tr.tr(target_key="USERNAME", langcode=lang),
                             username,
                         ),
                         (
-                            "SYSTEM",  # tr.tr(target_key="SYSTEM", langcode=lang),
+                            translate(
+                                folder=file, key="SYSTEM", lang=lang
+                            ),  # tr.tr(target_key="SYSTEM", langcode=lang),
                             platform,
                         ),
                         (
