@@ -1,7 +1,7 @@
 import toga
 from toga.style import Pack
 from toga.style.pack import COLUMN, ROW
-from mylocale.TR import TR
+from mysysinfo.translation import translate
 import locale
 import platform as p
 import os
@@ -20,7 +20,8 @@ print(processor)
 
 class MySysInfotoga(toga.App):
     def startup(self):
-        file = f"{self.paths.app.absolute()}/resources/localisation.csv"
+        file = f"{str(self.paths.app.absolute())}/localisations"
+        print(file)
         if platform == "android":
             lang = str(
                 self._impl.native.getResources().getConfiguration().getLocales().get(0)
@@ -29,34 +30,33 @@ class MySysInfotoga(toga.App):
         else:
             lang = locale.getlocale()
             lang, _ = lang
-        tr = TR(langcode=lang, csv_file=file)
         # main_box = toga.Box()
         device = toga.Box(
             children=[
                 toga.Table(
                     headings=[
-                        tr.tr(target_key="PARAMETER", langcode=lang),
-                        tr.tr(target_key="VALUE", langcode=lang),
+                        "PARAMETER",  # tr.tr(target_key="PARAMETER", langcode=lang),
+                        "VALUE",
                     ],
                     data=[
                         (
-                            tr.tr(target_key="USERNAME", langcode=lang),
+                            "USERNAME",  # tr.tr(target_key="USERNAME", langcode=lang),
                             username,
                         ),
                         (
-                            tr.tr(target_key="SYSTEM", langcode=lang),
+                            "SYSTEM",  # tr.tr(target_key="SYSTEM", langcode=lang),
                             platform,
                         ),
                         (
-                            tr(target_key="PROCESSORTYPE", langcode=lang),
+                            "PROCESSORTYPE",  # tr(target_key="PROCESSORTYPE", langcode=lang),
                             processor,
                         ),
                         (
-                            tr.tr(target_key="ARCHITECTURE", langcode=lang),
+                            "ARCHITECTURE",  # tr.tr(target_key="ARCHITECTURE", langcode=lang),
                             architecture,
                         ),
                         (
-                            tr.tr(target_key="VERSION", langcode=lang),
+                            "VERSION",  # tr.tr(target_key="VERSION", langcode=lang),
                             version,
                         ),
                     ],
@@ -67,8 +67,8 @@ class MySysInfotoga(toga.App):
 
         container = toga.OptionContainer(
             content=[
-                (tr.tr(target_key="DEVICE", langcode=lang), device),
-                (tr.tr(target_key="ABOUT", langcode=lang), about),
+                ("DEVICE", device),  # tr.tr(target_key="DEVICE", langcode=lang),
+                ("ABOUT", about),  # tr.tr(target_key="ABOUT", langcode=lang),
             ]
         )
         device.style.direction = "column"

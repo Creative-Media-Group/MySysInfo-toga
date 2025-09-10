@@ -10,15 +10,15 @@ def tr(content, key, count):
         return content[key]["other"]
 
 
-def translate(key, lang="", count: int = 0):
+def translate(folder: str, key: str, lang: str = "", count: int = 0):
     if lang == "":
         lang = "en"
     try:
-        with open(f"localisations/{lang}.json", mode="r") as f:
+        with open(f"{folder}/{lang}.json", mode="r") as f:
             content = json.load(f)
         return tr(key=key, content=content, count=count)
     except:
         lang = "en"
-        with open(f"localisations/{lang}.json", mode="r") as f:
+        with open(f"{folder}/{lang}.json", mode="r") as f:
             content = json.load(f)
         return tr(key=key, content=content, count=count)
