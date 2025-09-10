@@ -1,0 +1,13 @@
+{
+    "DEVICE": "Device",
+    "ABOUT": "About",
+    "LICENSE": "License",
+    "PARAMETER": "Parameter",
+    "VALUE": "Value",
+    "SYSTEM": "System",
+    "USERNAME": "Username",
+    "VERSION": "Version",
+    "ARCHITECTURE": "Processorarchitecture",
+    "PROCESSORTYPE": "Processortype",
+    "HOSTNAME": "Hostname"
+}
