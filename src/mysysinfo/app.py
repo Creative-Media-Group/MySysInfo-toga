@@ -54,15 +54,21 @@ class MySysInfotoga(toga.App):
                             platform,
                         ),
                         (
-                            "PROCESSORTYPE",  # tr(target_key="PROCESSORTYPE", langcode=lang),
+                            translate(
+                                folder=file, key="PROCESSORTYPE", lang=lang
+                            ),  # tr(target_key="PROCESSORTYPE", langcode=lang),
                             processor,
                         ),
                         (
-                            "ARCHITECTURE",  # tr.tr(target_key="ARCHITECTURE", langcode=lang),
+                            translate(
+                                folder=file, key="ARCHITECTURE", lang=lang
+                            ),  # tr.tr(target_key="ARCHITECTURE", langcode=lang),
                             architecture,
                         ),
                         (
-                            "VERSION",  # tr.tr(target_key="VERSION", langcode=lang),
+                            translate(
+                                folder=file, key="VERSION", lang=lang
+                            ),  # tr.tr(target_key="VERSION", langcode=lang),
                             version,
                         ),
                     ],
@@ -73,8 +79,14 @@ class MySysInfotoga(toga.App):
 
         container = toga.OptionContainer(
             content=[
-                ("DEVICE", device),  # tr.tr(target_key="DEVICE", langcode=lang),
-                ("ABOUT", about),  # tr.tr(target_key="ABOUT", langcode=lang),
+                (
+                    translate(folder=file, key="DEVICE", lang=lang),
+                    device,
+                ),  # tr.tr(target_key="DEVICE", langcode=lang),
+                (
+                    translate(folder=file, key="ABOUT", lang=lang),
+                    about,
+                ),  # tr.tr(target_key="ABOUT", langcode=lang),
             ]
         )
         device.style.direction = "column"
